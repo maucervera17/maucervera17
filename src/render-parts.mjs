@@ -14,10 +14,18 @@ const pills = [
 ];
 const titles = [
   ['about', '01', 'About'],
-  ['work', '02', 'Selected work'],
-  ['open-source', '03', 'Open source'],
-  ['activity', '04', 'Activity'],
+  ['what-i-do', '02', 'What I do'],
+  ['work', '03', 'Selected work'],
+  ['open-source', '04', 'Open source'],
+  ['activity', '05', 'Activity'],
 ];
+// Capability labels are verbatim from the portfolio (js/mau-profile.js).
+const capabilities = [
+  'AI features that do real work', 'AI people can trust and correct', 'Product design from zero to shipped',
+  'B2B tools and dashboards', 'Consumer and mobile experiences', 'Brand and visual identity',
+  'Interaction and motion craft', 'Design leadership',
+];
+const tools = 'Figma · Claude Code · Codex · Cursor · Blender · Remotion · three.js · Vercel';
 const cards = [
   ['ulika', 'Ulika', 'AI SaaS'],
   ['leadgentic-studio', 'Leadgentic Studio', 'Agentic site generator'],
@@ -30,6 +38,7 @@ const cards = [
 const jobs = [
   ...pills.map(([f, label, primary]) => [`pill-${f}`, { part: 'pill', label, ...(primary ? { primary: 1 } : {}) }]),
   ...titles.map(([f, n, label]) => [`title-${f}`, { part: 'title', n, label }]),
+  ['chips-what-i-do', { part: 'chips', items: capabilities.join('|'), tools }],
   ...cards.map(([id, name, cat]) => [`card-${id}`, { part: 'card', id, name, cat }]),
 ];
 

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=800">
+<link rel="icon" href="data:,">
+<style>
+  html, body { margin:0; }
+  .a { width:800px; height:800px; position:relative; overflow:hidden; }
+  .a img { position:absolute; left:58%; bottom:-60px; width:700px; transform:translateX(-50%); }
+  /* Option 1: cobalt duotone (photo multiplied onto cobalt) */
+  .cobalt { background:#2f2bff; }
+  .cobalt img { mix-blend-mode:multiply; filter:grayscale(1) contrast(1.15) brightness(1.08); }
+  /* Option 2: portfolio paper */
+  .paper { background:#f1f2f5; }
+  .paper img { mix-blend-mode:multiply; filter:grayscale(1) contrast(1.05); }
+</style>
+</head>
+<body>
+  <div class="a" id="out"><img src="covers/mau.jpg" alt=""></div>
+  <script>
+    document.getElementById('out').classList.add(location.hash.slice(1) || 'cobalt');
+    document.images[0].decode().then(() => document.title = 'ready');
+  </script>
+</body>
+</html>

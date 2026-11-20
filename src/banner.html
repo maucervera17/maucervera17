@@ -50,7 +50,12 @@
     const cam = new THREE.PerspectiveCamera(30, 420/400, 0.1, 50); cam.position.set(0, 0.35, 5.6); cam.lookAt(0, 0, 0);
     const d = await loadDuck(r);
     d.uni.uReveal.value = 1;
-    d.pivot.rotation.set(0.08, -0.55, 0);
+    // ?f=<frame>&n=<frames> renders one frame of a seamless sway loop; no params = the still pose.
+    const q = new URLSearchParams(location.search);
+    const n = Number(q.get('n')) || 0, f = Number(q.get('f')) || 0;
+    const ph = n ? (f / n) * Math.PI * 2 : 0;
+    d.pivot.rotation.set(0.08 + 0.05 * Math.sin(ph * 2), -0.55 + 0.42 * Math.sin(ph), 0.06 * Math.sin(ph));
+    d.pivot.position.y = 0.06 * Math.sin(ph * 2);
     scene.add(d.pivot);
     r.render(scene, cam); r.render(scene, cam);
     await document.fonts.ready;

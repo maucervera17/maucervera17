@@ -1,7 +1,7 @@
 <a href="https://www.maucervera.com">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.png">
-    <img alt="Mau Cervera. I design agents people can trust, and I ship them." src="assets/banner-light.png" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.webp">
+    <img alt="Mau Cervera. I design agents people can trust, and I ship them." src="assets/banner-light.webp" width="100%">
   </picture>
 </a>
 
@@ -17,7 +17,7 @@
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/title-about-dark.png"><img alt="About" src="assets/title-about-light.png" width="100%"></picture>
 
-<img align="right" src="src/covers/mau.jpg" width="220" alt="Mau Cervera">
+<img align="right" src="assets/avatar.png" width="220" alt="Mau Cervera">
 
 I'm Mau, a product designer working across AI products, agentic systems and digital experiences.
 
@@ -30,6 +30,12 @@ I ship my own AI products end to end, like Ulika and WP Jarvis.
 My dog is called Pato, it's Spanish for duck. Off the clock I make music as Luvo Laska.
 
 <br clear="right">
+<br>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/title-what-i-do-dark.png"><img alt="What I do" src="assets/title-what-i-do-light.png" width="100%"></picture>
+
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/chips-what-i-do-dark.png"><img alt="AI features that do real work · AI people can trust and correct · Product design from zero to shipped · B2B tools and dashboards · Consumer and mobile experiences · Brand and visual identity · Interaction and motion craft · Design leadership. Tools: Figma, Claude Code, Codex, Cursor, Blender, Remotion, three.js, Vercel" src="assets/chips-what-i-do-light.png" width="100%"></picture>
+
 <br>
 
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/title-work-dark.png"><img alt="Selected work" src="assets/title-work-light.png" width="100%"></picture>
@@ -48,6 +54,8 @@ My dog is called Pato, it's Spanish for duck. Off the clock I make music as Luvo
 <picture><source media="(prefers-color-scheme: dark)" srcset="assets/title-open-source-dark.png"><img alt="Open source" src="assets/title-open-source-light.png" width="100%"></picture>
 
 **[open-dtc-portal](https://github.com/maucervera17/open-dtc-portal)** · A self-hosted performance portal for direct-to-consumer brands. Meta Ads and sales analytics, an AI analyst, and competitor ad intelligence, inspired by tools such as Atria.
+
+**[wp-jarvis-connector](https://github.com/maucervera17/wp-jarvis-connector)** · The lightweight WordPress plugin that connects any WordPress site to WP Jarvis, the AI page builder.
 
 <br>
 

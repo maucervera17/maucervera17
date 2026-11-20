@@ -21,6 +21,13 @@
   .title .n { font-size:15px; font-weight:500; color:var(--soft); }
   .title h2 { margin:0; font-size:40px; font-weight:800; letter-spacing:-.03em; word-spacing:.08em; line-height:1; }
 
+  /* Capability chips */
+  .chips { width:880px; display:flex; flex-wrap:wrap; gap:10px; }
+  .chip { border:1px solid var(--hair); border-radius:999px; padding:10px 18px; font-size:17px; font-weight:500; letter-spacing:-.015em; }
+  .chip.on { background:var(--cobalt); border-color:var(--cobalt); color:#fff; }
+  .tools { width:880px; margin-top:18px; font-size:15px; font-weight:500; color:var(--soft); letter-spacing:-.01em; }
+  .tools b { color:var(--ink); font-weight:600; }
+
   /* Project card */
   .card { width:420px; }
   .card img { display:block; width:420px; height:262px; object-fit:cover; border-radius:18px; }
@@ -40,6 +47,9 @@
     out.innerHTML = `<span class="pill ${q.get('primary') ? 'primary' : ''}">${q.get('label')} <span class="arr">↗</span></span>`;
   } else if (part === 'title') {
     out.innerHTML = `<div class="title"><span class="n">${q.get('n')}</span><h2>${q.get('label')}</h2></div>`;
+  } else if (part === 'chips') {
+    const chips = q.get('items').split('|').map((c, i) => `<span class="chip ${i < 2 ? 'on' : ''}">${c}</span>`).join('');
+    out.innerHTML = `<div class="chips">${chips}</div><div class="tools"><b>Tools</b> &nbsp; ${q.get('tools')}</div>`;
   } else if (part === 'card') {
     out.innerHTML = `<div class="card"><img src="covers/${q.get('id')}.jpg"><div class="meta"><h3>${q.get('name')}</h3><span class="cat">${q.get('cat')}</span></div></div>`;
   }
