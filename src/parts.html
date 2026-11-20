@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=900">
+<link rel="icon" href="data:,">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=block" rel="stylesheet">
+<style>
+  :root { --paper:#ffffff; --ink:#141414; --soft:rgba(20,20,20,.58); --hair:rgba(20,20,20,.12); --cobalt:#2f2bff; --chip:#f1f2f5; }
+  body.dark { --paper:#0d1117; --ink:#ffffff; --soft:rgba(255,255,255,.62); --hair:rgba(255,255,255,.16); --chip:#1b2230; }
+  html, body { margin:0; background:transparent; font-family:'Inter Tight',sans-serif; color:var(--ink); }
+  #out { display:inline-block; padding:2px; }
+
+  /* Link pill */
+  .pill { display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:11px 20px; font-size:17px; font-weight:600; letter-spacing:-.015em; background:var(--chip); color:var(--ink); }
+  .pill.primary { background:var(--cobalt); color:#fff; }
+  .pill .arr { opacity:.7; font-weight:500; }
+
+  /* Section title */
+  .title { display:flex; align-items:baseline; gap:14px; width:880px; padding:6px 0 10px; border-bottom:1px solid var(--hair); }
+  .title .n { font-size:15px; font-weight:500; color:var(--soft); }
+  .title h2 { margin:0; font-size:40px; font-weight:800; letter-spacing:-.03em; word-spacing:.08em; line-height:1; }
+
+  /* Project card */
+  .card { width:420px; }
+  .card img { display:block; width:420px; height:262px; object-fit:cover; border-radius:18px; }
+  .card .meta { display:flex; justify-content:space-between; align-items:baseline; padding:14px 4px 0; }
+  .card h3 { margin:0; font-size:24px; font-weight:800; letter-spacing:-.035em; }
+  .card .cat { font-size:14px; font-weight:500; color:var(--soft); }
+</style>
+</head>
+<body>
+<div id="out"></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  if (location.hash === '#dark') document.body.classList.add('dark');
+  const out = document.getElementById('out');
+  const part = q.get('part');
+  if (part === 'pill') {
+    out.innerHTML = `<span class="pill ${q.get('primary') ? 'primary' : ''}">${q.get('label')} <span class="arr">↗</span></span>`;
+  } else if (part === 'title') {
+    out.innerHTML = `<div class="title"><span class="n">${q.get('n')}</span><h2>${q.get('label')}</h2></div>`;
+  } else if (part === 'card') {
+    out.innerHTML = `<div class="card"><img src="covers/${q.get('id')}.jpg"><div class="meta"><h3>${q.get('name')}</h3><span class="cat">${q.get('cat')}</span></div></div>`;
+  }
+  Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.title = 'ready');
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+Rubber duck model (duck.glb)
+
+The geometry derives from the SCEA Duck model from the Khronos glTF Sample
+Assets (https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/Duck),
+Copyright 2005 Sony Computer Entertainment Inc., licensed under the SCEA Shared
+Source License 1.0 (http://research.scea.com/scea_shared_source_license.html).
+
+Modified (Loop subdivision, recomputed normals) by ezam0000/ezpz-rubber-duck
+(https://github.com/ezam0000/ezpz-rubber-duck).
